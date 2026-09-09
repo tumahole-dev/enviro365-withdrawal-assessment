@@ -1,12 +1,13 @@
 package com.enviro.assessment.junior.tumaholenkhatho;
 
-import jakarta.persistance.*;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
-import java.util.List;
 
 // @Entity tells Hibernate this class maps to a database table (named "investor" by default).
 @Entity
