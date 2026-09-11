@@ -33,7 +33,7 @@ public class WithdrawalService {
             Integer age = product.getInvestor().getAge();
             if (age == null || age <= 65) {
                 throw new InvalidWithdrawalException(
-                    "Retirement wihtdrawals are only allowed for investors over 65"
+                    "Retirement withdrawals are only allowed for investors over 65"
                 );
             }
         }
