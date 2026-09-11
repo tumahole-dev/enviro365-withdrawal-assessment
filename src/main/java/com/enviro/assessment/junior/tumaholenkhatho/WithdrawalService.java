@@ -1,8 +1,9 @@
 package com.enviro.assessment.junior.tumaholenkhatho;
 
-import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public class WithdrawalService {
@@ -21,6 +22,11 @@ public class WithdrawalService {
         Product product = productRepository.findById(productId).orElseThrow(() -> new InvalidWithdrawalException("Product not found"));
 
         BigDecimal balance = product.getBalance();
+
+        // Rule: withdrawal must not exceed balance.
+        if (amount.compareTo(balance) > 0) {
+            throw new InvalidWithdrawalException("Withdrawal amount exceeds available balance");
+        }
 
         // Rule: retirement withdrawals only allowed if investor's age > 65.
         if ("Retirement".equalsIgnoreCase(product.getType())) {
