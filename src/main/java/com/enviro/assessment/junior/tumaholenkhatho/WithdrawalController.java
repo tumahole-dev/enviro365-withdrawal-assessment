@@ -21,7 +21,7 @@ public class WithdrawalController {
     // POST /api/withdrawals
     // Request body example: { "products": 1, "amount": 500.00 }
     @PostMapping
-    public WithdrawalResponse createWithdrawal(@RequestBody WithdrawalRequest request) {
+    public WithdrawalResponse createWithdrawal(@Valid @RequestBody WithdrawalRequest request) {
         WithdrawalNotice notice = withdrawalService.createWithdrawal(request.getProductId(), request.getAmount());
         return new WithdrawalResponse(notice);
     }

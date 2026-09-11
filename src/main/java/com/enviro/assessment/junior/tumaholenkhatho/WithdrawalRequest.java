@@ -1,5 +1,7 @@
 package com.enviro.assessment.junior.tumaholenkhatho;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 // DTO representing the JSON body the frontend sends when requesting a withdrawal.
@@ -8,7 +10,11 @@ import java.math.BigDecimal;
 
 public class WithdrawalRequest {
     
+    @NotNull(message = "productId is required")
     private Long productId;
+
+    @NotNull(message = "amount is required")
+    @Positive(message = "amount must be greater than zero")
     private BigDecimal amount;
 
     public Long getProductId() { return productId; }
