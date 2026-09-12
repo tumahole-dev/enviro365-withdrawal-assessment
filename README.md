@@ -46,3 +46,17 @@ Both must be running at the same time.
 
 ## AI Usage Disclosure
 This project was built with AI assistance (Claude) for guidance on Spring Boot and React patterns, debugging, and code review. All code was reviewed and understood.
+
+## Screenshots
+
+### Portfolio Dashboard
+![Portfolio Dashboard](screenshots/Portfolio%20Dashboard.png)
+
+### Withdrawal Form
+![Withdrawal Form](screenshots/Withdrawal%20Form.png)
+
+### Withdrawal History
+![Withdrawal History](screenshots/Withdrawal%20History.png)
+
+### Withdrawal Error
+![Withdrawal Error](screenshots/Withdrawal%20error.png)
